@@ -57,7 +57,7 @@ bun run dev
 1. The bot listens to all messages in channels it has access to
 2. When a non-English message is detected, it's sent to Claude AI for translation
 3. The translation is posted as a reply to the original message in an embed
-4. Messages in English or starting with `!` are ignored
+4. Messages in English or starting with `/` are ignored
 
 ## Configuration
 
