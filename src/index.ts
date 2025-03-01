@@ -1,9 +1,9 @@
-import { anthropic } from '@ai-sdk/anthropic';
-import { generateObject } from 'ai';
-import { Client, EmbedBuilder, GatewayIntentBits, Message } from 'discord.js';
+import { Client, GatewayIntentBits, Message, EmbedBuilder } from 'discord.js';
 import dotenv from 'dotenv';
+import { anthropic } from '@ai-sdk/anthropic';
+import { generateObject, generateText } from 'ai';
+import { infer, object, z } from 'zod';
 import { tryCatch } from 'try-catch-wrapper-ts';
-import { z } from 'zod';
 
 dotenv.config();
 
@@ -18,7 +18,7 @@ const client = new Client({
 
 const TranslationResponseSchema = z.object({
   translatedText: z.string().describe("the translated text into english"),
-  detectedLanguage: z.string().describe("English or French")
+  detectedLanguage: z.string().describe("the detected language, e.g English, Spanish, Dutch, French, etc")
 })
 
 type TranslationResponse = z.infer<typeof TranslationResponseSchema>;
@@ -31,7 +31,7 @@ async function translateMessage(content: string): Promise<TranslationResponse> {
     messages: [
       {
         role: "system",
-        content: "Translate the following french text into English. Recognize and properly translate slang terms and abbreviations while maintaining the original meaning. make it sound casual"
+        content: "Translate the following text into English. Detect the source language automatically. Recognize and properly translate slang terms and abbreviations while maintaining the original meaning."
       },
       {
         role: "user",
