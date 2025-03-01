@@ -1,0 +1,15 @@
+services:
+  translation-bot:
+    build: .
+    container_name: discord-translation-bot
+    restart: unless-stopped
+    environment:
+      - ANTHROPIC_API_KEY=sk-
+      - DISCORD_TOKEN=discord-token
+      - NODE_ENV=production      
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
+    driver: bridge
