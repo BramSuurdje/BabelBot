@@ -1,0 +1,23 @@
+{
+  "name": "translation-bot",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "bun src/index.ts",
+    "build": "tsc",
+    "dev": "bun --watch src/index.ts"
+  },
+  "author": "Bram Suurd",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@ai-sdk/anthropic": "^1.1.12",
+    "ai": "^4.1.47",
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.4.7",
+    "try-catch-wrapper-ts": "^1.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2",
+    "zod": "^3.24.2"
+  }
+}
