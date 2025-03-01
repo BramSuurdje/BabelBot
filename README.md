@@ -66,12 +66,6 @@ Add the api keys to the docker compose at `compose.yml`
 docker compose up -d
 ```
 
-4. Check logs:
-
-```bash
-docker compose logs -f translation-bot
-```
-
 ## How It Works
 
 1. The bot listens to all messages in channels it has access to
