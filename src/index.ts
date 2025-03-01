@@ -1,9 +1,9 @@
-import { Client, GatewayIntentBits, Message, EmbedBuilder } from 'discord.js';
-import dotenv from 'dotenv';
 import { anthropic } from '@ai-sdk/anthropic';
-import { generateObject, generateText } from 'ai';
-import { infer, object, z } from 'zod';
+import { generateObject } from 'ai';
+import { Client, EmbedBuilder, GatewayIntentBits, Message } from 'discord.js';
+import dotenv from 'dotenv';
 import { tryCatch } from 'try-catch-wrapper-ts';
+import { z } from 'zod';
 
 dotenv.config();
 
