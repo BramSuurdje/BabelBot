@@ -52,6 +52,26 @@ npm run dev
 bun run dev
 ```
 
+## Docker Deployment
+
+Build and run with Docker Compose:
+
+Add the api keys to the docker compose at `compose.yml`
+```yml
+  - ANTHROPIC_API_KEY=sk-
+  - DISCORD_TOKEN=discord-token
+```
+
+```bash
+docker compose up -d
+```
+
+4. Check logs:
+
+```bash
+docker compose logs -f translation-bot
+```
+
 ## How It Works
 
 1. The bot listens to all messages in channels it has access to
