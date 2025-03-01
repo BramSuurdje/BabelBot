@@ -56,7 +56,7 @@ client.on('messageCreate', async (message: Message) => {
   if (message.author.bot || !message.content.trim()) return;
   
   // Don't translate messages that are commands
-  if (message.content.startsWith('!')) return;
+  if (message.content.startsWith('/')) return;
 
   try {
     // Get translation
