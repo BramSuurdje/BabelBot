@@ -20,7 +20,11 @@
     "typescript": "^5.8.2",
     "zod": "^3.24.2"
   },
+  "pre-commit": [
+    "format"
+],
   "devDependencies": {
-    "@biomejs/biome": "1.9.4"
+    "@biomejs/biome": "1.9.4",
+    "pre-commit": "^1.2.2"
   }
 }
