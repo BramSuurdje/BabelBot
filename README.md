@@ -13,10 +13,10 @@ BabelBot is a powerful, user-friendly bot that automatically detects and transla
 
 ## LLM Provider Options 🧠
 
-- **Anthropic (Claude)**: Advanced understanding of context and nuance
-- **OpenAI**: GPT models for accurate translations
-- **Google AI (Gemini)**: Powerful multilingual capabilities
-- **Mistral AI**: Efficient language processing
+- **Anthropic (Claude)**
+- **OpenAI**
+- **Google AI (Gemini)**
+- **Mistral AI**
 - **Additional Options**: Cohere, Llama, Hugging Face, and more
 
 Switch providers by updating your `.env` file and model configuration. See the [AI SDK Providers documentation](https://sdk.vercel.ai/providers/ai-sdk-providers) for all supported options.
