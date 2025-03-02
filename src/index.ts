@@ -31,7 +31,7 @@ async function translateMessage(content: string): Promise<TranslationResponse> {
     messages: [
       {
         role: "system",
-        content: "Translate the following text into English. Detect the source language automatically. Recognize and properly translate slang terms and abbreviations while maintaining the original meaning."
+        content: "Translate the following text into English. Detect the source language automatically. Recognize and properly translate slang terms and abbreviations while maintaining the original meaning. the message send is used in a chat, so dont translate the words 1 to 1, but try to use them in a sentence when possible"
       },
       {
         role: "user",
