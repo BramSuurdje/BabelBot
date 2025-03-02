@@ -81,13 +81,11 @@ The bot will connect to Discord and begin translating messages automatically.
 
 ## Docker Deployment 🐳
 
-1. Configure your API keys in `compose.yml`:
-   ```yml
-   - ANTHROPIC_API_KEY=sk-ant-...
-   - DISCORD_TOKEN=your-discord-token
-   ```
+1. Copy the `.env.example` to `.env`
 
-2. Build and run with Docker Compose:
+2. Replace with your own API keys
+
+3. Build and run with Docker Compose:
    ```bash
    docker compose up -d
    ```
