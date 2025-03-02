@@ -1,7 +1,7 @@
 services:
   translation-bot:
     build: .
-    container_name: discord-translation-bot
+    container_name: babelbot
     restart: unless-stopped
     env_file:
       - .env
