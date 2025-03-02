@@ -1,6 +1,6 @@
-# Discord Translation Bot 🌐
+# BabelBot 🌐
 
-Discord Translation Bot is a powerful, user-friendly bot that automatically detects and translates non-English messages into English. Built with AI language detection technology, it preserves the original meaning of messages including slang and abbreviations while providing seamless translations in real-time.
+BabelBot is a powerful, user-friendly bot that automatically detects and translates non-English messages into English. Built with AI language detection technology, it preserves the original meaning of messages including slang and abbreviations while providing seamless translations in real-time.
 
 ## Features ✨
 
