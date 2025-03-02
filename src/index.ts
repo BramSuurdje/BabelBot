@@ -1,4 +1,3 @@
-import { anthropic } from '@ai-sdk/anthropic';
 import { google } from '@ai-sdk/google';
 import { generateObject } from 'ai';
 import { Client, EmbedBuilder, GatewayIntentBits, Message } from 'discord.js';
