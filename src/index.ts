@@ -131,9 +131,9 @@ client.login(process.env.DISCORD_TOKEN);
 
 // Log successful connection
 client.once('ready', () => {
-  client.user?.setActivity({
-    name: "Duolingo 🐤"
-  })
+	client.user?.setActivity({
+		name: 'Duolingo 🐤',
+	});
 
 	console.log(`Logged in as ${client.user?.tag}`);
 });
