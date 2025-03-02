@@ -1,4 +1,5 @@
 import { anthropic } from '@ai-sdk/anthropic';
+import { google } from '@ai-sdk/google';
 import { generateObject } from 'ai';
 import { Client, EmbedBuilder, GatewayIntentBits, Message } from 'discord.js';
 import dotenv from 'dotenv';
@@ -18,20 +19,38 @@ const client = new Client({
 
 const TranslationResponseSchema = z.object({
   translatedText: z.string().describe("the translated text into english"),
-  detectedLanguage: z.string().describe("the detected language, e.g English, Spanish, Dutch, French, etc")
+  detectedLanguage: z.string().describe("the detected language, French, English, Spanish etc etc ")
 })
 
 type TranslationResponse = z.infer<typeof TranslationResponseSchema>;
 
+const prompt = `
+You are a translation bot for a Discord server. Your task is to translate messages from other languages to English while maintaining the original meaning, tone, and intent.
+
+## Translation requirements:
+
+- Translate French text to natural, conversational English
+- Keep the same tone (formal, casual, humorous) as the original
+- Preserve emojis, formatting, and sentence structure when possible
+- Handle French slang, idioms, and cultural references appropriately
+
+## Special considerations:
+
+- Properly translate gaming terms and internet slang common in Discord
+- Flag ambiguous phrases that might have multiple meanings
+- Keep proper names, brand names, and technical terms unchanged unless translation is necessary
+- Include brief explanations in [brackets] for cultural references that might not translate directly
+`
+
 // Function to detect language and translate
 async function translateMessage(content: string): Promise<TranslationResponse> {
   const { data, error } = await tryCatch(generateObject({
-    model: anthropic("claude-3-5-haiku-latest"),
+    model: google("gemini-2.0-flash-001"),
     schema: TranslationResponseSchema,
     messages: [
       {
         role: "system",
-        content: "Translate the following text into English. Detect the source language automatically. Recognize and properly translate slang terms and abbreviations while maintaining the original meaning."
+        content: prompt
       },
       {
         role: "user",

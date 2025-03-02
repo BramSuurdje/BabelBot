@@ -11,7 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@ai-sdk/anthropic": "^1.1.12",
+    "@ai-sdk/google": "^1.1.17",
     "ai": "^4.1.47",
     "discord.js": "^14.18.0",
     "dotenv": "^16.4.7",

@@ -7,6 +7,7 @@ services:
       - ANTHROPIC_API_KEY=sk-
       - DISCORD_TOKEN=discord-token
       - NODE_ENV=production      
+      - GOOGLE_GENERATIVE_AI_API_KEY=AIzaSyA1M35rKF21-NXgvu3KLI2jej1wwm9X_lA
     networks:
       - bot-network
 
