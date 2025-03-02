@@ -1,7 +1,7 @@
 {
   "name": "translation-bot",
-  "version": "1.0.0",
-  "main": "index.ts",
+  "version": "1.0.1",
+  "main": "src/index.ts",
   "scripts": {
     "start": "bun src/index.ts",
     "build": "tsc",
@@ -9,7 +9,7 @@
   },
   "author": "Bram Suurd",
   "license": "ISC",
-  "description": "",
+  "description": "Discord bot that automatically detects and translates non-English messages to English in real-time. Uses Google's Gemini AI to maintain meaning and tone, bridging communication gaps in international servers.",
   "dependencies": {
     "@ai-sdk/google": "^1.1.17",
     "ai": "^4.1.47",
