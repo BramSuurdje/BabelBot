@@ -1,6 +1,6 @@
 # Discord Translation Bot
 
-A Discord bot that automatically detects and translates non-English messages into English. The bot uses Claude AI to detect the language and provide accurate translations, including slang and abbreviations.
+A Discord bot that automatically detects and translates non-English messages into English. The bot uses AI to detect the language and provide accurate translations, including slang and abbreviations.
 
 ## Features
 
@@ -10,11 +10,26 @@ A Discord bot that automatically detects and translates non-English messages int
 - Clean embed display with original language information
 - Ignores bot messages and commands
 
+## LLM Flexibility
+
+This project uses the Vercel AI SDK, which means you can integrate any supported LLM provider, not just Claude. The AI SDK supports:
+
+- Anthropic (Claude)
+- OpenAI
+- Cohere
+- Llama
+- Google AI (Gemini)
+- Mistral AI
+- Hugging Face
+- And many others
+
+To switch models, update your `.env` file with the appropriate API key and modify the model configuration in the code. Check the [AI SDK Providers documentation](https://sdk.vercel.ai/providers/ai-sdk-providers) for all supported options.
+
 ## Requirements
 
 - Node.js or Bun runtime
 - Discord bot token
-- Anthropic API key
+- Google API key
 
 ## Installation
 
@@ -31,7 +46,7 @@ bun install
 
 ```
 DISCORD_TOKEN=your-discord-token
-ANTHROPIC_API_KEY=your-anthropic-api-key
+GOOGLE_GENERATIVE_AI_API_KEY=your-google-api-key
 ```
 
 ## Usage
@@ -78,7 +93,9 @@ docker compose up -d
 The bot uses the following environment variables:
 
 - `DISCORD_TOKEN`: Your Discord bot token
-- `ANTHROPIC_API_KEY`: Your Anthropic API key for Claude AI
+- `ANTHROPIC_API_KEY`: Your Anthropic API key (if using Claude)
+- `GOOGLE_GENERATIVE_AI_API_KEY`: Your Google AI API key (if using Gemini)
+- Or any other provider API key supported by the AI SDK
 
 ## License
 
