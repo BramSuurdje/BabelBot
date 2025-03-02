@@ -95,9 +95,15 @@ client.on('messageCreate', async (message: Message) => {
 	try {
 		// Get translation
 		const data = await translateMessage(message.content);
+		let footerText = `Original language: ${data.detectedLanguage}`;
 
 		// Skip if already English
 		if (data.detectedLanguage === 'English') return;
+
+		// set the footer text to "Error occurred if the detected language is Error"
+		if (data.detectedLanguage === 'Error') {
+			footerText = 'Error occurred';
+		}
 
 		// Create embed with translation
 		const translationEmbed = new EmbedBuilder()
@@ -108,7 +114,7 @@ client.on('messageCreate', async (message: Message) => {
 			})
 			.setDescription(data.translatedText)
 			.setFooter({
-				text: `Original language: ${data.detectedLanguage}`,
+				text: footerText,
 			})
 			.setTimestamp();
 
