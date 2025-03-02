@@ -67,14 +67,8 @@ async function translateMessage(content: string): Promise<TranslationResponse> {
 			model: google('gemini-2.0-flash-001'),
 			schema: TranslationResponseSchema,
 			messages: [
-				{
-					role: 'system',
-					content: prompt,
-				},
-				{
-					role: 'user',
-					content: `${content}`,
-				},
+				{ role: 'system', content: prompt },
+				{ role: 'user', content: `${content}` },
 			],
 		}),
 	);
